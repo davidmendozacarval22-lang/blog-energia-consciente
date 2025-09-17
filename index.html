@@ -1,320 +1,209 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Energía Consciente — Estudiantes Comfenalco</title>
-  <meta name="description" content="Blog educativo para sensibilizar a estudiantes de Comfenalco sobre el uso eficiente y responsable de los recursos energéticos desde una perspectiva ambiental." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Energía Consciente</title>
   <style>
-    /* --- Paleta: verde, azul, blanco --- */
-    :root{
-      --verde: #2e8b57; /* verde principal */
-      --azul: #0b78d1;  /* azul secundario */
-      --fondo: #f7fbfd; /* fondo claro */
-      --card: #ffffff;
-      --gris-text: #475569;
-      --accent: #06b6d4; /* acento */
-      --max-width: 1100px;
-      --radius: 12px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--fondo);color:var(--gris-text);}
-    a{color:var(--azul);text-decoration:none}
-    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+    /* Encabezado */
+    header {
+      background: #2e7d32; /* Verde oscuro */
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+      color: #ffffff;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 8px;
+    }
 
-    /* Header */
-    header{background:linear-gradient(90deg,var(--verde),var(--azul));color:#fff;padding:18px 0;border-bottom-left-radius:24px;border-bottom-right-radius:24px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:62px;height:62px;background:rgba(255,255,255,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center}
-    .logo svg{width:40px;height:40px}
-    .title{font-size:18px;font-weight:700}
-    .subtitle{font-size:13px;opacity:0.95}
+    /* Navegación */
+    nav {
+      background: #43a047;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-    nav{margin-top:12px}
-    .menu{display:flex;gap:14px;flex-wrap:wrap}
-    .menu a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:10px;font-weight:600}
+    /* Títulos */
+    h1 {
+      color: #1b5e20;
+    }
+    h2 {
+      color: #ff6f00; /* Naranja vivo */
+      margin-top: 25px;
+    }
+    h3 {
+      color: #0277bd; /* Azul */
+      margin-top: 15px;
+    }
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:22px}
-    .hero-card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,15,20,0.06)}
-    .hero h1{margin:0 0 8px;font-size:26px;color:#06283D}
-    .hero p{margin:0 0 14px;line-height:1.45}
-    .cta{display:inline-block;background:var(--verde);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700}
+    /* Contenido */
+    main {
+      padding: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+    p {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    ul {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    li {
+      margin-bottom: 10px;
+    }
 
-    .stats{display:flex;gap:12px;margin-top:12px}
-    .stat{flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.08),transparent);padding:12px;border-radius:10px;text-align:center}
-    .stat strong{display:block;font-size:18px;color:#06283D}
+    /* Quiz */
+    .quiz {
+      background: #e8f5e9;
+      padding: 20px;
+      border: 1px solid #c8e6c9;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    .quiz button {
+      margin-top: 10px;
+      background: #43a047;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .quiz button:hover {
+      background: #2e7d32;
+    }
+    .resultado {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #1b5e20;
+    }
 
-    /* Grid */
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
-
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.04)}
-    .card h3{margin:0 0 8px}
-    .small{font-size:14px;color:#6b7280}
-
-    /* Lista de acciones */
-    .list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
-    .item{background:linear-gradient(180deg,rgba(46,139,87,0.06),transparent);padding:10px;border-radius:10px}
-
-    /* Proyectos y noticias */
-    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .post{padding:12px;border-radius:10px;border:1px solid rgba(3,7,18,0.04);background:linear-gradient(90deg,rgba(11,120,209,0.02),transparent)}
-
-    /* Formulario */
-    form{display:flex;flex-direction:column;gap:10px}
-    input[type="text"], input[type="email"], textarea{padding:10px;border-radius:8px;border:1px solid #e6eef6}
-    button{background:var(--azul);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
-
-    /* Trivia */
-    .quiz{display:grid;gap:12px}
-    .option{border:1px solid rgba(3,7,18,0.06);padding:10px;border-radius:10px;cursor:pointer}
-    .option:hover{transform:translateY(-3px);transition:all .15s}
-
-    footer{margin-top:28px;padding:14px;text-align:center;color:#475569}
-
-    /* Responsive */
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .posts{grid-template-columns:1fr}
+    /* Pie de página */
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <!-- Encabezado -->
   <header>
-    <div class="container">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- simple logo SVG -->
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="white" opacity="0.06"/>
-            <path d="M16 40c6-12 20-12 26 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-            <rect x="28" y="16" width="8" height="14" rx="2" fill="#fff"/>
-          </svg>
-        </div>
-        <div>
-          <div class="title">Energía Consciente</div>
-          <div class="subtitle">Estudiantes Comfenalco — Uso eficiente y responsable de la energía</div>
-        </div>
-      </div>
-
-      <nav>
-        <div class="menu" role="navigation" aria-label="Menú principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#porque">¿Por qué cuidar la energía?</a>
-          <a href="#acciones">Acciones diarias</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#noticias">Noticias</a>
-          <a href="#contacto">Contáctanos</a>
-        </div>
-      </nav>
-    </div>
+    <h1>Blog Energía Consciente</h1>
+    <p>Uso eficiente y responsable de los recursos energéticos 🌱⚡</p>
   </header>
 
-  <main class="container">
-    <section id="inicio" class="hero">
-      <div class="hero-card">
-        <h1>Usa la energía con conciencia: pequeñas acciones, gran impacto</h1>
-        <p>Bienvenidos al espacio donde estudiantes de Comfenalco aprenden, comparten y se inspiran para reducir el consumo energético y proteger el planeta.</p>
-        <a class="cta" href="#acciones">Comienza hoy</a>
+  <!-- Navegación -->
+  <nav>
+    <a href="#importancia">Importancia</a>
+    <a href="#consejos">Consejos</a>
+    <a href="#acciones">Acciones</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
 
-        <div class="stats">
-          <div class="stat"><small>Alumnos activos</small><strong>1.200+</strong></div>
-          <div class="stat"><small>Proyectos</small><strong>34</strong></div>
-          <div class="stat"><small>Ahorro estimado</small><strong>15% energía</strong></div>
-        </div>
-      </div>
-
-      <aside class="hero-card" aria-label="Dato curioso">
-        <h3>¿Sabías que...?</h3>
-        <p class="small">Reemplazar una bombilla incandescente por una LED puede ahorrar hasta un 75% de energía por iluminación.</p>
-
-        <div style="margin-top:12px">
-          <h4 style="margin:0 0 6px">Reto de la semana</h4>
-          <p class="small">Apaga todas las luces innecesarias durante 1 hora y registra el ahorro en kWh (actividad grupal).</p>
-        </div>
-      </aside>
+  <!-- Contenido principal -->
+  <main>
+    <!-- Importancia -->
+    <section id="importancia">
+      <h2>🌍 La importancia del uso eficiente de la energía</h2>
+      <p>La energía es fundamental para nuestra vida diaria, pero su uso desmedido genera consecuencias graves: cambio climático, agotamiento de recursos y contaminación. 
+      En Comfenalco queremos promover una cultura de sostenibilidad donde cada acción cuenta.</p>
     </section>
 
-    <section class="grid" style="margin-top:28px">
-      <div>
-        <div id="porque" class="card">
-          <h3>¿Por qué cuidar la energía?</h3>
-          <p>Los recursos energéticos —como el petróleo, el gas y la electricidad— si se usan sin criterio generan impactos ambientales fuertes: emisiones de CO₂, contaminación y degradación de ecosistemas. La eficiencia energética reduce consumo, costos y la huella ambiental.</p>
-
-          <!-- simple infographic -->
-          <svg viewBox="0 0 600 120" style="width:100%;margin-top:12px;border-radius:8px;background:linear-gradient(90deg,rgba(6,182,212,0.03),transparent);padding:10px">
-            <rect x="10" y="18" width="140" height="60" rx="6" fill="#e6f6f3" stroke="#d1f0ea" />
-            <text x="30" y="48" style="font-weight:700;fill:#065a46">Bombilla LED</text>
-            <text x="30" y="66" style="font-size:12px;fill:#0b78d1">Consumo bajo</text>
-
-            <rect x="180" y="12" width="160" height="76" rx="6" fill="#fff9ec" stroke="#f5e7c6" />
-            <text x="200" y="48" style="font-weight:700;fill:#7a4b00">Incandescente</text>
-            <text x="200" y="66" style="font-size:12px;fill:#d97706">Consumo alto</text>
-
-            <rect x="360" y="22" width="210" height="56" rx="6" fill="#e8f2ff" stroke="#dbeeff" />
-            <text x="380" y="48" style="font-weight:700;fill:#0b4f7a">Panel solar</text>
-            <text x="380" y="66" style="font-size:12px;fill:#0b78d1">Energía renovable</text>
-          </svg>
-        </div>
-
-        <div id="acciones" class="card" style="margin-top:14px">
-          <h3>Acciones diarias</h3>
-          <p class="small">Hábitos sencillos que todos los estudiantes pueden aplicar:</p>
-          <div class="list">
-            <div class="item">Apagar luces al salir del salón</div>
-            <div class="item">Desconectar cargadores cuando no se usan</div>
-            <div class="item">Aprovechar la luz natural</div>
-            <div class="item">Usar bombillas LED</div>
-            <div class="item">Apagar equipos en vez de dejarlos en espera</div>
-            <div class="item">Promover el uso compartido de recursos</div>
-          </div>
-
-          <details style="margin-top:10px;padding:10px;border-radius:8px;background:#f8fffe;border:1px solid rgba(6,182,212,0.06)">
-            <summary style="font-weight:700">Guía rápida para ahorrar energía en casa</summary>
-            <ol style="margin:8px 0 0 16px">
-              <li>Revisa el consumo: identifica dispositivos que consumen más.</li>
-              <li>Cambia hábitos: baños más cortos, desconectar equipos.</li>
-              <li>Invierte inteligentemente: LED, regletas con interruptor.</li>
-            </ol>
-          </details>
-        </div>
-
-        <div id="proyectos" class="card" style="margin-top:14px">
-          <h3>Proyectos estudiantiles</h3>
-          <p class="small">Comparte tu iniciativa y gana visibilidad. Ejemplos de proyectos:</p>
-          <div class="posts">
-            <article class="post">
-              <h4>Panel solar casero</h4>
-              <p class="small">Estudiantes de 10° construyeron un pequeño cargador solar para celulares con materiales reciclados.</p>
-            </article>
-            <article class="post">
-              <h4>Campaña "Apaga y Ahorra"</h4>
-              <p class="small">Jornadas semanales para apagar luces en zonas comunes y registrar el ahorro.</p>
-            </article>
-            <article class="post">
-              <h4>Concurso de afiches</h4>
-              <p class="small">Diseños creativos que promueven buenas prácticas energéticas.</p>
-            </article>
-            <article class="post">
-              <h4>Protoboard: medidor de consumo</h4>
-              <p class="small">Un prototipo simple que muestra consumo en tiempo real (interfaz educativa).</p>
-            </article>
-          </div>
-        </div>
-
-        <div id="noticias" class="card" style="margin-top:14px">
-          <h3>Noticias y avances</h3>
-          <ul style="margin:8px 0 0 18px">
-            <li>20 Sep 2025 - Taller sobre energías renovables en la sede principal (registro abierto).</li>
-            <li>10 Ago 2025 - Nueva línea de bombillas LED disponibles para préstamo estudiantil.</li>
-            <li>05 Jul 2025 - Resultados del reto "Apagón 1 hora" — reducción de consumo en zonas X.</li>
-          </ul>
-        </div>
-      </div>
-
-      <aside>
-        <div class="card">
-          <h3>Comparte tu foto</h3>
-          <p class="small">Sube una imagen mostrando cómo practicas el ahorro energético (solo para uso educativo).</p>
-          <form id="uploadForm">
-            <input type="text" id="nombre" placeholder="Tu nombre (opcional)" />
-            <input type="email" id="email" placeholder="Correo (opcional)" />
-            <input type="file" id="foto" accept="image/*" />
-            <button type="button" id="previewBtn">Previsualizar</button>
-            <div id="preview" style="margin-top:8px"></div>
-          </form>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h3>Trivia rápida</h3>
-          <div class="quiz" id="quiz">
-            <div><strong>¿Cuál es la principal ventaja de usar LED?</strong></div>
-            <div class="option" data-correct="true">Consumen menos energía</div>
-            <div class="option">Tienen peor calidad de luz</div>
-            <div class="option">Se calientan más que una incandescente</div>
-            <div class="option">Son más difíciles de reciclar</div>
-            <div id="quizResult" style="margin-top:8px;font-weight:700"></div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h3>Recursos</h3>
-          <p class="small">Videos, podcasts y guías descargables para profundizar.</p>
-          <ul style="margin:8px 0 0 18px">
-            <li><a href="#">Video: Cómo instalar una bombilla LED</a></li>
-            <li><a href="#">Guía: Cálculo básico de consumo eléctrico</a></li>
-            <li><a href="#">Podcast: Voces verdes Comfenalco</a></li>
-          </ul>
-        </div>
-
-      </aside>
+    <!-- Consejos -->
+    <section id="consejos">
+      <h2>💡 Consejos para ahorrar energía</h2>
+      <ul>
+        <li>Apaga las luces cuando no las necesites.</li>
+        <li>Desconecta cargadores y aparatos en desuso.</li>
+        <li>Aprovecha la luz natural en lugar de la artificial.</li>
+        <li>Usa bombillos LED de bajo consumo.</li>
+        <li>Comparte estos hábitos con tu familia y amigos.</li>
+      </ul>
     </section>
 
-    <section id="contacto" style="margin-top:22px">
-      <div class="card">
-        <h3>Contáctanos</h3>
-        <p class="small">¿Tienes una idea, proyecto o sugerencia? Escríbenos.</p>
-        <form id="contactForm">
-          <input type="text" id="c_nombre" placeholder="Nombre" required />
-          <input type="email" id="c_email" placeholder="Correo" required />
-          <textarea id="c_mensaje" rows="4" placeholder="Mensaje" required></textarea>
-          <button type="submit">Enviar mensaje</button>
-        </form>
-        <div id="contactResult" style="margin-top:10px"></div>
-      </div>
+    <!-- Acciones -->
+    <section id="acciones">
+      <h2>🤝 Acciones en nuestra institución</h2>
+      <p>Comfenalco promueve campañas de sensibilización ambiental, talleres prácticos y proyectos escolares que buscan concienciar a todos los estudiantes sobre el impacto positivo del ahorro energético.</p>
     </section>
 
-    <footer>
-      <div class="small">© Comfenalco — Energía Consciente · Proyecto educativo · Diseñado para estudiantes</div>
-    </footer>
+    <!-- Quiz -->
+    <section id="quiz" class="quiz">
+      <h2>📝 Quiz rápido</h2>
+      <p><strong>Pregunta:</strong> ¿Cuál de estas acciones ayuda a ahorrar energía?</p>
+      <form id="quizForm">
+        <input type="radio" name="respuesta" value="A"> A) Dejar las luces encendidas todo el día.<br>
+        <input type="radio" name="respuesta" value="B"> B) Usar bombillos LED y apagar aparatos que no se usan.<br>
+        <input type="radio" name="respuesta" value="C"> C) Tener cargadores conectados sin utilizarlos.<br><br>
+        <button type="button" onclick="verificar()">Responder</button>
+      </form>
+      <div id="resultado" class="resultado"></div>
+    </section>
   </main>
 
+  <!-- Pie de página -->
+  <footer>
+    <p>Blog Energía Consciente - Comfenalco © 2025</p>
+  </footer>
+
+  <!-- Script Quiz -->
   <script>
-    // Preview image upload (client-side only)
-    const foto = document.getElementById('foto');
-    const previewBtn = document.getElementById('previewBtn');
-    const preview = document.getElementById('preview');
-
-    previewBtn.addEventListener('click', ()=>{
-      const file = foto.files[0];
-      preview.innerHTML = '';
-      if(!file){ preview.innerHTML = '<small class="small">No seleccionaste una imagen.</small>'; return }
-      const reader = new FileReader();
-      reader.onload = function(e){
-        const img = document.createElement('img');
-        img.src = e.target.result; img.style.maxWidth='100%'; img.style.borderRadius='8px';
-        preview.appendChild(img);
+    function verificar() {
+      const opciones = document.getElementsByName("respuesta");
+      let seleccion = "";
+      for (const opcion of opciones) {
+        if (opcion.checked) {
+          seleccion = opcion.value;
+        }
       }
-      reader.readAsDataURL(file);
-    });
-
-    // Quiz logic
-    document.querySelectorAll('.option').forEach(opt=>{
-      opt.addEventListener('click',(e)=>{
-        const correct = e.currentTarget.dataset.correct === 'true';
-        const out = document.getElementById('quizResult');
-        if(correct){ out.textContent = '¡Correcto! Las LED consumen menos energía.'; out.style.color = 'green' }
-        else{ out.textContent = 'No es correcto. Intenta de nuevo.'; out.style.color = 'crimson' }
-      })
-    })
-
-    // Contact form (client-only simulation)
-    const contactForm = document.getElementById('contactForm');
-    const contactResult = document.getElementById('contactResult');
-    contactForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const nombre = document.getElementById('c_nombre').value;
-      contactResult.textContent = `Gracias, ${nombre}. Tu mensaje fue recibido (simulación).`; contactResult.style.color = 'green';
-      contactForm.reset();
-    });
-
-    // Accessibility: focus styles
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Tab') document.body.classList.add('show-focus');
-    });
+      const resultado = document.getElementById("resultado");
+      if (seleccion === "B") {
+        resultado.textContent = "✅ ¡Correcto! Apagar aparatos y usar LED ayuda a ahorrar energía.";
+        resultado.style.color = "#1b5e20";
+      } else if (seleccion === "") {
+        resultado.textContent = "⚠️ Por favor selecciona una opción.";
+        resultado.style.color = "#ff6f00";
+      } else {
+        resultado.textContent = "❌ Incorrecto. Intenta de nuevo.";
+        resultado.style.color = "#c62828";
+      }
+    }
   </script>
 </body>
 </html>
