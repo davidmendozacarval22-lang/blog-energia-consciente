@@ -7,17 +7,17 @@
   <style>
     /* Estilos generales */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
+      color: #333333;
+      background: #ffffff;
       margin: 0;
       padding: 0;
     }
 
     /* Encabezado */
     header {
-      background: #2e7d32; /* Verde oscuro */
+      background: #0d47a1; /* Azul oscuro */
       color: white;
       padding: 30px;
       text-align: center;
@@ -30,11 +30,12 @@
     header p {
       font-size: 1.2em;
       margin-top: 8px;
+      color: #e3f2fd;
     }
 
     /* Navegación */
     nav {
-      background: #43a047;
+      background: #c62828; /* Rojo */
       padding: 12px;
       text-align: center;
     }
@@ -51,14 +52,14 @@
 
     /* Títulos */
     h1 {
-      color: #1b5e20;
+      color: #0d47a1; /* Azul */
     }
     h2 {
-      color: #ff6f00; /* Naranja vivo */
+      color: #c62828; /* Rojo */
       margin-top: 25px;
     }
     h3 {
-      color: #0277bd; /* Azul */
+      color: #0d47a1; /* Azul */
       margin-top: 15px;
     }
 
@@ -70,15 +71,14 @@
     }
     p {
       font-size: 1.1em;
-      color: #444;
       margin-bottom: 15px;
     }
     ul {
-      background: #ffffff;
-      border: 1px solid #ddd;
+      background: #f5f5f5;
+      border-left: 5px solid #c62828;
       border-radius: 6px;
       padding: 15px 25px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
     li {
       margin-bottom: 10px;
@@ -86,15 +86,15 @@
 
     /* Quiz */
     .quiz {
-      background: #e8f5e9;
+      background: #e3f2fd;
       padding: 20px;
-      border: 1px solid #c8e6c9;
+      border: 1px solid #bbdefb;
       border-radius: 6px;
       margin-top: 20px;
     }
     .quiz button {
       margin-top: 10px;
-      background: #43a047;
+      background: #c62828;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -103,17 +103,16 @@
       cursor: pointer;
     }
     .quiz button:hover {
-      background: #2e7d32;
+      background: #8e0000;
     }
     .resultado {
       margin-top: 15px;
       font-weight: bold;
-      color: #1b5e20;
     }
 
     /* Pie de página */
     footer {
-      background: #2e7d32;
+      background: #0d47a1;
       color: white;
       text-align: center;
       padding: 15px;
@@ -125,7 +124,7 @@
   <!-- Encabezado -->
   <header>
     <h1>Blog Energía Consciente</h1>
-    <p>Uso eficiente y responsable de los recursos energéticos 🌱⚡</p>
+    <p>Uso eficiente y responsable de los recursos energéticos 🌍⚡</p>
   </header>
 
   <!-- Navegación -->
@@ -195,10 +194,10 @@
       const resultado = document.getElementById("resultado");
       if (seleccion === "B") {
         resultado.textContent = "✅ ¡Correcto! Apagar aparatos y usar LED ayuda a ahorrar energía.";
-        resultado.style.color = "#1b5e20";
+        resultado.style.color = "#0d47a1";
       } else if (seleccion === "") {
         resultado.textContent = "⚠️ Por favor selecciona una opción.";
-        resultado.style.color = "#ff6f00";
+        resultado.style.color = "#c62828";
       } else {
         resultado.textContent = "❌ Incorrecto. Intenta de nuevo.";
         resultado.style.color = "#c62828";
