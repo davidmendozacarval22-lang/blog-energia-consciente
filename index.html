@@ -3,104 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Energía Consciente</title>
+  <title>⚡ Blog Energía Consciente ⚡</title>
+
+  <!-- Tipografías modernas -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Estilos generales */
+    /* ====== ESTILO GLOBAL ====== */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
       margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a192f, #0f3460, #16213e);
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
 
-    /* Encabezado */
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* ====== ENCABEZADO ====== */
     header {
-      background: #0d47a1; /* Azul fuerte */
+      background: linear-gradient(90deg, #0d47a1, #1976d2, #0d47a1);
       color: white;
-      padding: 20px;
+      padding: 50px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,82,82,0.2) 0%, transparent 70%);
+      animation: pulse 6s infinite;
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin: 0;
-      color: #ffffff;
+      color: #fff;
+      text-shadow: 0 0 15px #ff5252, 0 0 25px #64b5f6;
     }
 
-    /* Sección principal */
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 0.3; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    /* ====== CONTENIDO PRINCIPAL ====== */
     main {
-      padding: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
     }
 
     h2 {
-      color: #d32f2f; /* Rojo */
-      margin-top: 20px;
+      font-size: 1.8em;
+      color: #ff5252;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px rgba(255,82,82,0.7);
     }
 
     h3 {
-      color: #0d47a1; /* Azul */
+      color: #64b5f6;
+      font-size: 1.2em;
+      margin-top: 20px;
     }
 
     p {
       font-size: 1.1em;
-      color: #444;
-      margin-bottom: 15px;
+      line-height: 1.6;
     }
 
-    /* Pie de página */
+    /* ====== SECCIÓN COMENTARIOS ====== */
+    #comentarios {
+      margin-top: 50px;
+      border: 2px solid rgba(255,82,82,0.4);
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    #comentarios h2 {
+      color: #ff5252;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* ====== PIE DE PÁGINA ====== */
     footer {
       background: #0d47a1;
-      color: white;
+      color: #bbdefb;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 2px solid #1565c0;
+      margin-top: 40px;
+      text-shadow: 0 0 6px #64b5f6;
     }
 
-    /* Sección de comentarios */
-    #comentarios {
-      margin-top: 40px;
-      padding: 20px;
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+    /* Animación de aparición */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.2s ease forwards;
     }
-    #comentarios h2 {
-      color: #d32f2f;
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado -->
+
+  <!-- ENCABEZADO -->
   <header>
-    <h1>Blog Energía Consciente</h1>
+    <h1>⚡ Blog Energía Consciente ⚡</h1>
   </header>
 
+  <!-- CONTENIDO -->
   <main>
-    <h2>🌍 La importancia del uso responsable de la energía</h2>
-    <p>El uso eficiente de los recursos energéticos es clave para reducir el impacto ambiental, disminuir costos y promover un desarrollo sostenible. Los estudiantes de Comfenalco pueden ser protagonistas del cambio adoptando hábitos sencillos en su vida diaria.</p>
+    <div class="card fade-in">
+      <h2>🌍 La importancia del uso responsable de la energía</h2>
+      <p>El uso eficiente de los recursos energéticos es fundamental para disminuir el impacto ambiental, reducir costos y avanzar hacia un desarrollo sostenible. Los estudiantes de Comfenalco tienen el poder de liderar este cambio con acciones cotidianas.</p>
+    </div>
 
-    <h2>💡 Acciones prácticas para los estudiantes</h2>
-    <h3>1. Apaga lo que no uses</h3>
-    <p>Apaga las luces y los equipos electrónicos cuando no los necesites.</p>
+    <div class="card fade-in">
+      <h2>💡 Acciones prácticas para los estudiantes</h2>
+      <h3>1. ¿Apagas lo que no usas?</h3>
+      <p>Desconecta luces y equipos cuando no sean necesarios.</p>
 
-    <h3>2. Usa la energía con inteligencia</h3>
-    <p>Prefiere la luz natural durante el día y organiza tus tiempos de estudio para aprovecharla.</p>
+      <h3>2. ¿Usas la energía con inteligencia?</h3>
+      <p>Aprovecha la luz natural y organiza tu tiempo para reducir consumo eléctrico.</p>
 
-    <h3>3. Promueve energías limpias</h3>
-    <p>Apoya proyectos escolares que integren energías renovables como paneles solares.</p>
+      <h3>3. ¿Promueves energías limpias?</h3>
+      <p>Impulsa proyectos escolares con energías renovables, como paneles solares.</p>
+    </div>
 
-    <h2>🌱 Compromiso ambiental</h2>
-    <p>El compromiso con el ambiente empieza desde lo cotidiano. Ser responsables con la energía es ser responsables con el planeta.</p>
+    <div class="card fade-in">
+      <h2>🌱 Compromiso ambiental</h2>
+      <p>Ser responsables con la energía es ser responsables con el planeta. Cada decisión consciente contribuye a un futuro más limpio y sostenible.</p>
+    </div>
 
-    <!-- Comentarios con Utterances -->
-    <section id="comentarios">
+    <!-- COMENTARIOS -->
+    <section id="comentarios" class="fade-in">
       <h2>💬 Deja tu opinión</h2>
       <script src="https://utteranc.es/client.js"
               repo="davidmendozacarval22-lang/blog-energia-consciente"
               issue-term="pathname"
-              theme="github-light"
+              theme="github-dark"
               crossorigin="anonymous"
               async>
-      </scri
+      </script>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    © 2025 - Blog Energía Consciente | Colegio Comfenalco
+  </footer>
+</body>
+</html>
